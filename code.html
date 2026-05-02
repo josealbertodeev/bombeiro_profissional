@@ -1,0 +1,518 @@
+<!DOCTYPE html>
+
+<html lang="pt-BR">
+
+<head>
+    <meta charset="utf-8" />
+    <meta content="width=device-width, initial-scale=1.0" name="viewport" />
+    <script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Work+Sans:wght@400;600;700;900&amp;family=Inter:wght@400;600&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <link
+        href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap"
+        rel="stylesheet" />
+    <script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "on-secondary": "#ffffff",
+                        "surface-variant": "#f9dcd9",
+                        "secondary": "#8b5000",
+                        "on-primary": "#ffffff",
+                        "tertiary-fixed": "#c8e6ff",
+                        "error": "#ba1a1a",
+                        "tertiary": "#00557a",
+                        "surface-container-lowest": "#ffffff",
+                        "inverse-on-surface": "#ffedea",
+                        "surface-container": "#ffe9e6",
+                        "on-surface-variant": "#5b403d",
+                        "secondary-fixed-dim": "#ffb870",
+                        "on-error": "#ffffff",
+                        "primary": "#a20513",
+                        "on-background": "#271816",
+                        "surface-container-highest": "#f9dcd9",
+                        "surface": "#fff8f7",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-container": "#006e9d",
+                        "secondary-container": "#ff9800",
+                        "primary-container": "#c62828",
+                        "surface-container-low": "#fff0ef",
+                        "tertiary-fixed-dim": "#88ceff",
+                        "on-secondary-container": "#653900",
+                        "on-primary-container": "#ffe0dd",
+                        "on-tertiary-container": "#d1eaff",
+                        "inverse-primary": "#ffb4ac",
+                        "on-surface": "#271816",
+                        "surface-container-high": "#ffe2de",
+                        "surface-dim": "#f0d4d0",
+                        "primary-fixed": "#ffdad6",
+                        "on-tertiary-fixed": "#001e2f",
+                        "on-primary-fixed": "#410003",
+                        "inverse-surface": "#3e2c2a",
+                        "surface-tint": "#b91d20",
+                        "primary-fixed-dim": "#ffb4ac",
+                        "on-primary-fixed-variant": "#93000e",
+                        "error-container": "#ffdad6",
+                        "on-error-container": "#93000a",
+                        "secondary-fixed": "#ffdcbe",
+                        "outline": "#8f706c",
+                        "on-secondary-fixed-variant": "#693c00",
+                        "on-secondary-fixed": "#2c1600",
+                        "outline-variant": "#e4beba",
+                        "on-tertiary-fixed-variant": "#004c6e",
+                        "surface-bright": "#fff8f7",
+                        "background": "#fff8f7"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.125rem",
+                        "lg": "0.25rem",
+                        "xl": "0.5rem",
+                        "full": "0.75rem"
+                    },
+                    "spacing": {
+                        "gutter": "24px",
+                        "container-max": "1200px",
+                        "xl": "80px",
+                        "base": "8px",
+                        "lg": "48px",
+                        "xs": "4px",
+                        "md": "24px",
+                        "sm": "12px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "h3": ["Work Sans"],
+                        "h1": ["Work Sans"],
+                        "h2": ["Work Sans"],
+                        "label-caps": ["Inter"],
+                        "body-lg": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "1.5", "fontWeight": "400" }],
+                        "h3": ["24px", { "lineHeight": "1.3", "fontWeight": "600" }],
+                        "h1": ["48px", { "lineHeight": "1.1", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "h2": ["32px", { "lineHeight": "1.2", "fontWeight": "700" }],
+                        "label-caps": ["14px", { "lineHeight": "1.0", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "1.6", "fontWeight": "400" }]
+                    }
+                },
+            },
+        }
+    </script>
+    <style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #fff8f7;
+            color: #271816;
+        }
+    </style>
+</head>
+
+<body class="antialiased">
+    <!-- TopNavBar -->
+    <nav
+        class="fixed top-0 w-full z-50 bg-white/95 dark:bg-slate-900/95 backdrop-blur-sm border-b border-slate-200 dark:border-slate-800 shadow-sm">
+        <div class="flex justify-between items-center max-w-[1200px] mx-auto px-6 h-20">
+            <span class="text-xl font-black text-red-700 dark:text-red-600 uppercase tracking-tighter">Bombeiro
+                Profissional</span>
+            <div class="hidden md:flex items-center gap-8 font-['Work_Sans'] text-sm font-semibold tracking-tight">
+                <a class="text-red-700 dark:text-red-500 border-b-2 border-red-700 dark:border-red-500 pb-1"
+                    href="#">Home</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-red-700 dark:hover:text-red-500 transition-colors"
+                    href="#sobre">Sobre Mim</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-red-700 dark:hover:text-red-500 transition-colors"
+                    href="#servicos">Serviços</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-red-700 dark:hover:text-red-500 transition-colors"
+                    href="#projetos">Projetos</a>
+                <a class="text-slate-600 dark:text-slate-400 hover:text-red-700 dark:hover:text-red-500 transition-colors"
+                    href="#contato">Contato</a>
+            </div>
+            <button
+                class="bg-primary-container text-on-primary px-6 py-2.5 rounded font-['Work_Sans'] text-sm font-semibold transition-all duration-200 ease-in-out active:scale-95 hover:bg-red-800">
+                Solicitar Treinamento
+            </button>
+        </div>
+    </nav>
+    <!-- Hero Section -->
+    <header class="relative pt-20 h-[921px] flex items-center overflow-hidden">
+        <div class="absolute inset-0 z-0">
+            <img alt="Bombeiro Profissional em prontidão" class="w-full h-full object-cover"
+                data-alt="A heroic and professional portrait of a firefighter in complete protective gear, standing confidently in a modern fire station bay with high-key professional lighting. The color palette is dominated by deep reds and industrial grays, conveying a mood of readiness, safety, and technical authority. Soft morning light enters from the background, highlighting the metallic textures of the equipment."
+                src="https://lh3.googleusercontent.com/aida-public/AB6AXuDHaeuyJyOE95SgKYesEZq5rAc255_f5kuB2DZ4UX1EMcqtaSIap34UJH7L81EtPG5DzwRU-lLSFkLpJXxftPEgUC9BOmnGDFxT5B6QkRcgFDtiullE0F07C-LC2-Wlo7fLMaZVzcQpKyjhz8advx4QswsFwFzHfdO3eQqQcfw5rac0xRcHICSBRX0rtqhue2p-2GsJNbH0-0Z_9kSbAf_fbUVB7UDUSPj3aunSx21lKiFDdjqh37Se52ga8J5Ec2uAR9mWu42p3CI" />
+            <div class="absolute inset-0 bg-gradient-to-r from-on-background/80 via-on-background/40 to-transparent">
+            </div>
+        </div>
+        <div class="relative z-10 max-w-[1200px] mx-auto px-6 w-full">
+            <div class="max-w-2xl">
+                <span
+                    class="inline-block px-3 py-1 bg-secondary-container text-on-secondary-container text-label-caps font-label-caps uppercase rounded-sm mb-4">Prontidão
+                    e Segurança</span>
+                <h1 class="font-h1 text-h1 text-white mb-6">Bombeiro Profissional dedicado à proteção e prevenção</h1>
+                <p class="font-body-lg text-body-lg text-slate-200 mb-8">Especialista em resgate e prevenção com mais de
+                    10 anos de experiência em situações críticas, focando na excelência operacional e salvaguarda de
+                    vidas.</p>
+                <div class="flex flex-wrap gap-4">
+                    <button
+                        class="bg-primary-container text-white px-8 py-4 font-['Work_Sans'] font-bold rounded transition-all hover:bg-red-800 flex items-center gap-2">
+                        Solicitar Treinamento
+                    </button>
+                    <button
+                        class="border-2 border-white text-white px-8 py-4 font-['Work_Sans'] font-bold rounded transition-all hover:bg-white/10">
+                        Ver Experiência
+                    </button>
+                </div>
+            </div>
+        </div>
+    </header>
+    <!-- Sobre Mim -->
+    <section class="py-lg md:py-xl bg-white" id="sobre">
+        <div class="max-w-[1200px] mx-auto px-6 grid md:grid-cols-2 gap-md items-start">
+            <div class="relative">
+                <img alt="Retrato profissional" class="w-full h-[600px] object-cover rounded-lg shadow-xl"
+                    data-alt="A professional and clean studio headshot of a firefighter in a crisp dress uniform, looking towards the camera with an expression of integrity and leadership. The background is a solid, neutral warm gray that emphasizes the professional tone of the portfolio. The lighting is soft and directional, typical of corporate portraiture, highlighting the fine details of the uniform insignia."
+                    src="https://lh3.googleusercontent.com/aida-public/AB6AXuDiTbu6pisJuaObQa-iPCGn5sa3wPa_ss1UrS6k2fVtPyzoIWaBhL1vsb2Uk70BxUJyfs4fIV33vuZre6PUSN-LXaVxTn1yr4FowkuDNSUysly6XAQPRlAgmwwdGNVddPLakc70BHtLFVDYusOzccbPhXxzVJX2A9j3O_lyXdSbc8JC2Q7InxxTCOfrhuCH6zyCz5_zgD7I-B4lgb13RPwFMmWlPWnjF9sQAyq0MqRA2qhwLdohIAvh32BsttL4wNTk7jYtWLS_tNg" />
+                <div class="absolute -bottom-6 -right-6 bg-secondary-container p-8 shadow-lg hidden lg:block">
+                    <p class="text-white font-h2 text-h2 leading-none">+10</p>
+                    <p class="text-white font-label-caps uppercase">Anos de Experiência</p>
+                </div>
+            </div>
+            <div class="space-y-6">
+                <h2 class="font-h2 text-h2 text-primary">Disciplina, Coragem e Comprometimento</h2>
+                <p class="font-body-md text-body-md text-on-surface-variant leading-relaxed">
+                    Iniciei minha jornada com o propósito inabalável de proteger a sociedade. Minha formação técnica é
+                    pautada pelo rigor institucional e pelo aperfeiçoamento constante. Acredito que a prevenção é a
+                    ferramenta mais poderosa para salvar vidas, e por isso dedico grande parte da minha carreira à
+                    instrução de novos brigadistas e à consultoria de segurança.
+                </p>
+                <div class="mt-8">
+                    <h3 class="font-h3 text-h3 text-on-surface mb-6">Trajetória Profissional</h3>
+                    <div
+                        class="space-y-8 relative before:absolute before:left-[11px] before:top-2 before:bottom-2 before:w-[2px] before:bg-outline-variant">
+                        <div class="flex gap-4 relative">
+                            <div
+                                class="w-6 h-6 rounded-full bg-primary flex-shrink-0 z-10 border-4 border-white shadow-sm">
+                            </div>
+                            <div>
+                                <p class="font-label-caps text-primary text-xs uppercase">2014</p>
+                                <p class="font-h3 text-body-lg font-bold">Início na Corporação</p>
+                                <p class="text-sm text-slate-500">Ingresso através de concurso público e formação
+                                    militar intensiva.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 relative">
+                            <div
+                                class="w-6 h-6 rounded-full bg-secondary-container flex-shrink-0 z-10 border-4 border-white shadow-sm">
+                            </div>
+                            <div>
+                                <p class="font-label-caps text-secondary-container text-xs uppercase">2018</p>
+                                <p class="font-h3 text-body-lg font-bold">Especialização em Resgate</p>
+                                <p class="text-sm text-slate-500">Aperfeiçoamento em APH Tático e resgate veicular
+                                    pesado.</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 relative">
+                            <div
+                                class="w-6 h-6 rounded-full bg-tertiary-container flex-shrink-0 z-10 border-4 border-white shadow-sm">
+                            </div>
+                            <div>
+                                <p class="font-label-caps text-tertiary-container text-xs uppercase">2022</p>
+                                <p class="font-h3 text-body-lg font-bold">Certificação Internacional</p>
+                                <p class="text-sm text-slate-500">Certificado pela NFPA para instrução de combate a
+                                    incêndio estrutural.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Serviços -->
+    <section class="py-lg md:py-xl bg-surface-container-low" id="servicos">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="text-center mb-16">
+                <h2 class="font-h2 text-h2 text-on-surface">Áreas de Atuação Técnica</h2>
+                <p class="text-on-surface-variant max-w-2xl mx-auto mt-4">Soluções profissionais para mitigação de
+                    riscos e resposta a emergências.</p>
+            </div>
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <!-- Card 1 -->
+                <div
+                    class="bg-white p-8 border border-outline-variant hover:shadow-md transition-shadow rounded-sm group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary mb-4 block group-hover:scale-110 transition-transform"
+                        data-icon="fire_truck">fire_truck</span>
+                    <h3 class="font-h3 text-body-lg mb-2">Combate a Incêndios</h3>
+                    <p class="text-sm text-on-surface-variant">Táticas avançadas de supressão e controle de chamas em
+                        ambientes industriais e residenciais.</p>
+                </div>
+                <!-- Card 2 -->
+                <div
+                    class="bg-white p-8 border border-outline-variant hover:shadow-md transition-shadow rounded-sm group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary mb-4 block group-hover:scale-110 transition-transform"
+                        data-icon="emergency">emergency</span>
+                    <h3 class="font-h3 text-body-lg mb-2">Resgate e Salvamento</h3>
+                    <p class="text-sm text-on-surface-variant">Operações complexas de salvamento em altura, espaços
+                        confinados e resgate aquático.</p>
+                </div>
+                <!-- Card 3 -->
+                <div
+                    class="bg-white p-8 border border-outline-variant hover:shadow-md transition-shadow rounded-sm group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-primary mb-4 block group-hover:scale-110 transition-transform"
+                        data-icon="medical_services">medical_services</span>
+                    <h3 class="font-h3 text-body-lg mb-2">Primeiros-socorros</h3>
+                    <p class="text-sm text-on-surface-variant">Atendimento Pré-Hospitalar (APH) com foco em
+                        estabilização e suporte básico de vida.</p>
+                </div>
+                <!-- Card 4 -->
+                <div
+                    class="bg-white p-8 border border-outline-variant hover:shadow-md transition-shadow rounded-sm group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-secondary-container mb-4 block group-hover:scale-110 transition-transform"
+                        data-icon="groups">groups</span>
+                    <h3 class="font-h3 text-body-lg mb-2">Treinamentos de Brigada</h3>
+                    <p class="text-sm text-on-surface-variant">Capacitação técnica para equipes internas de resposta
+                        rápida conforme NR-23.</p>
+                </div>
+                <!-- Card 5 -->
+                <div
+                    class="bg-white p-8 border border-outline-variant hover:shadow-md transition-shadow rounded-sm group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-secondary-container mb-4 block group-hover:scale-110 transition-transform"
+                        data-icon="record_voice_over">record_voice_over</span>
+                    <h3 class="font-h3 text-body-lg mb-2">Palestras de Prevenção</h3>
+                    <p class="text-sm text-on-surface-variant">Conscientização e cultura de segurança para escolas,
+                        empresas e eventos.</p>
+                </div>
+                <!-- Card 6 -->
+                <div
+                    class="bg-white p-8 border border-outline-variant hover:shadow-md transition-shadow rounded-sm group">
+                    <span
+                        class="material-symbols-outlined text-4xl text-secondary-container mb-4 block group-hover:scale-110 transition-transform"
+                        data-icon="exit_to_app">exit_to_app</span>
+                    <h3 class="font-h3 text-body-lg mb-2">Consultoria de Evacuação</h3>
+                    <p class="text-sm text-on-surface-variant">Planejamento estratégico de rotas de fuga e simulações de
+                        abandono de área.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Projetos & Conquistas -->
+    <section class="py-lg md:py-xl bg-white overflow-hidden" id="projetos">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="flex flex-col md:flex-row md:items-end justify-between mb-12 gap-4">
+                <div>
+                    <h2 class="font-h2 text-h2 text-on-surface">Missões e Reconhecimento</h2>
+                    <p class="text-on-surface-variant mt-2">Um registro de compromisso com a excelência e a vida.</p>
+                </div>
+                <div class="flex gap-2">
+                    <span
+                        class="px-3 py-1 bg-surface-container-high rounded text-xs font-bold text-primary border border-primary/10">INTERNACIONAL</span>
+                    <span
+                        class="px-3 py-1 bg-surface-container-high rounded text-xs font-bold text-secondary-container border border-secondary-container/10">CERTIFICADO</span>
+                </div>
+            </div>
+            <div class="grid md:grid-cols-3 gap-8">
+                <!-- Projeto 1 -->
+                <div class="group relative bg-on-background h-[450px] overflow-hidden flex flex-col justify-end p-8">
+                    <img alt="Missões de Destaque"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                        data-alt="An action-oriented, dramatic photo of a tactical fire rescue mission at night. High contrast lighting from sirens and portable floodlights illuminates a scene with smoke and metallic surfaces. The firefighter is the focal point, using technical equipment with precision. The color scheme focuses on midnight blues and fiery oranges, suggesting high stakes and professional mastery."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuDScQTmUtPWMfqWGyl8aGhMQzppGpIceT8j0JCd7W5fieDqAQ_XIctorD1HhJbUHJbX84Y9pjGOXpycuIMWjRYiMiGd7b9Cu7kS-kQCyD5fBJZuSpGqeiGJTSREH6_AKnB_qG2jPZfcy4hB38Usxi2MyMjS5ToxrP_38od1W3_-PcyfifkeBYMEWTAnKB0wI2bKFAjFyB2MqNcd6fX2Yfy-75UIc7anx9ga8llqZhpQbd8cXNgSibsZCoJzRHY_pEh9BaEnvEtwJxI" />
+                    <div class="relative z-10">
+                        <p class="text-secondary-container font-label-caps text-xs uppercase mb-2">Destaque Operacional
+                        </p>
+                        <h4 class="text-white font-h3 mb-4">Missões de Destaque</h4>
+                        <p class="text-slate-300 text-sm mb-4">Atuação em cenários críticos de desastres naturais e
+                            grandes incêndios florestais.</p>
+                        <button class="text-white text-sm font-bold flex items-center gap-2 group-hover:underline">Ver
+                            detalhes <span class="material-symbols-outlined text-sm"
+                                data-icon="arrow_forward">arrow_forward</span></button>
+                    </div>
+                </div>
+                <!-- Projeto 2 -->
+                <div class="group relative bg-on-background h-[450px] overflow-hidden flex flex-col justify-end p-8">
+                    <img alt="Ações Comunitárias"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                        data-alt="A brightly lit, optimistic photograph of a community safety workshop taking place in a modern school library. A firefighter in a clean uniform is teaching young students about fire prevention using friendly, colorful visual aids. The lighting is high-key and natural, creating a mood of accessibility, trust, and education. The palette is professional yet warm with red and orange accents."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuACGSYKPi1ske3r0GrautYcZCf6DNKYtq2ea0hwFiIqnZpDUglcGHWg4VxWmFIqrT2oJzx9BzZKhK2vJKoez95z9PH4pYmP8iRjjL8gV9Yp4U_YZaK-ZNquBYBe43D75tQuWXQNRWfkOHwlqBvYmlGLNsPpiQ0StiSo4eTOwCKyf6i4D8Jw0HmQNEp7EEsK35S_MYE81rBHTMo_0FrD7f9Yp3JB_kMBP6AIvXXk4FQqjqTfBrdnSykszA6eLHoB8Dq1VWfmMDelu2s" />
+                    <div class="relative z-10">
+                        <p class="text-secondary-container font-label-caps text-xs uppercase mb-2">Responsabilidade
+                            Social</p>
+                        <h4 class="text-white font-h3 mb-4">Ações Comunitárias</h4>
+                        <p class="text-slate-300 text-sm mb-4">Simulações em escolas e treinamento de civis para
+                            preparação para emergências.</p>
+                        <button class="text-white text-sm font-bold flex items-center gap-2 group-hover:underline">Ver
+                            detalhes <span class="material-symbols-outlined text-sm"
+                                data-icon="arrow_forward">arrow_forward</span></button>
+                    </div>
+                </div>
+                <!-- Projeto 3 -->
+                <div class="group relative bg-on-background h-[450px] overflow-hidden flex flex-col justify-end p-8">
+                    <img alt="Certificações e Prêmios"
+                        class="absolute inset-0 w-full h-full object-cover opacity-60 group-hover:scale-105 transition-transform duration-500"
+                        data-alt="A high-quality close-up of professional firefighting certifications and gold-plated awards laid out on a dark mahogany desk. The lighting is focused and dramatic, highlighting the embossed seals and professional signatures. The aesthetic is extremely corporate and high-end, using deep warm tones and sharp focus to signify technical expertise and formal recognition of bravery."
+                        src="https://lh3.googleusercontent.com/aida-public/AB6AXuAQyTl85NJ1IxJfkt34QqLPsXdLTwE_Pm44uY3VHl1M54BrD0efjg_2f6aKZmWlL7GjDvAgec4WRIUdznJovCXoI9hfUCaHkWF5OOxQfMspP8Q-QU1BdWblaXxQfOiBsft34Dz7hZzmAO-ZgCi5GHiUjqQG-zyQPsqrI-u6g3dF1yO88CWHBLJ052b8g0w09UKvZ13YNLRjRSsLJNGNXX8EKMsM0NN7zgmbE0tm7RYpX-l81-VWogQpQXWNzf0hyWiD-iwoD2lXqt0" />
+                    <div class="relative z-10">
+                        <p class="text-secondary-container font-label-caps text-xs uppercase mb-2">Excelência Técnica
+                        </p>
+                        <h4 class="text-white font-h3 mb-4">Certificações e Prêmios</h4>
+                        <p class="text-slate-300 text-sm mb-4">Reconhecimento internacional por mérito profissional e
+                            inovação em prevenção.</p>
+                        <button class="text-white text-sm font-bold flex items-center gap-2 group-hover:underline">Ver
+                            detalhes <span class="material-symbols-outlined text-sm"
+                                data-icon="arrow_forward">arrow_forward</span></button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Depoimentos -->
+    <section class="py-lg md:py-xl bg-surface-container-low">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <h2 class="font-h2 text-h2 text-center mb-12">Reconhecimento de Pares e Instituições</h2>
+            <div class="grid md:grid-cols-3 gap-8">
+                <div class="bg-white p-8 border-l-4 border-primary shadow-sm">
+                    <span class="material-symbols-outlined text-primary-container mb-4"
+                        data-icon="format_quote">format_quote</span>
+                    <p class="text-on-surface-variant font-body-md italic mb-6">"Um profissional raro que combina
+                        habilidade técnica extrema com uma calma inabalável em situações de alto estresse. Seus
+                        treinamentos mudaram a cultura de segurança em nossa planta."</p>
+                    <div>
+                        <p class="font-bold">Ricardo Alencar</p>
+                        <p class="text-xs text-slate-500">Diretor de Operações, Indústrias Metalúrgicas</p>
+                    </div>
+                </div>
+                <div class="bg-white p-8 border-l-4 border-secondary-container shadow-sm">
+                    <span class="material-symbols-outlined text-secondary-container mb-4"
+                        data-icon="format_quote">format_quote</span>
+                    <p class="text-on-surface-variant font-body-md italic mb-6">"Sua dedicação às ações comunitárias e
+                        simulações em escolas elevou drasticamente o nível de consciência preventiva em nossa região. Um
+                        verdadeiro líder servidor."</p>
+                    <div>
+                        <p class="font-bold">Dra. Helena Martins</p>
+                        <p class="text-xs text-slate-500">Secretária de Segurança Pública Municipal</p>
+                    </div>
+                </div>
+                <div class="bg-white p-8 border-l-4 border-tertiary-container shadow-sm">
+                    <span class="material-symbols-outlined text-tertiary-container mb-4"
+                        data-icon="format_quote">format_quote</span>
+                    <p class="text-on-surface-variant font-body-md italic mb-6">"Como instrutor, ele possui a didática
+                        perfeita para traduzir conceitos complexos de combate a incêndio em ações práticas e seguras
+                        para nossa brigada interna."</p>
+                    <div>
+                        <p class="font-bold">Capitão Roberto Silva</p>
+                        <p class="text-xs text-slate-500">Comandante de Grupamento</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Contato -->
+    <section class="py-lg md:py-xl bg-white" id="contato">
+        <div class="max-w-[1200px] mx-auto px-6">
+            <div class="grid lg:grid-cols-2 gap-16">
+                <div>
+                    <h2 class="font-h2 text-h2 text-primary mb-6">Vamos Fortalecer sua Segurança?</h2>
+                    <p class="text-on-surface-variant text-body-lg mb-8">Disponível para consultorias, treinamentos
+                        corporativos e palestras especializadas. Entre em contato para um diagnóstico de riscos.</p>
+                    <div class="space-y-6">
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full">
+                                <span class="material-symbols-outlined text-primary" data-icon="mail">mail</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 uppercase font-bold">E-mail Profissional</p>
+                                <p class="font-bold">contato@bombeiroprofissional.pro</p>
+                            </div>
+                        </div>
+                        <div class="flex items-center gap-4">
+                            <div class="w-12 h-12 bg-surface-container flex items-center justify-center rounded-full">
+                                <span class="material-symbols-outlined text-primary" data-icon="call">call</span>
+                            </div>
+                            <div>
+                                <p class="text-xs text-slate-500 uppercase font-bold">Telefone / WhatsApp</p>
+                                <p class="font-bold">+55 (11) 99999-0000</p>
+                            </div>
+                        </div>
+                        <div class="flex gap-4 pt-4">
+                            <a class="w-10 h-10 border border-outline-variant flex items-center justify-center rounded hover:bg-primary hover:text-white transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined" data-icon="public">public</span>
+                            </a>
+                            <a class="w-10 h-10 border border-outline-variant flex items-center justify-center rounded hover:bg-primary hover:text-white transition-colors"
+                                href="#">
+                                <span class="material-symbols-outlined" data-icon="share">share</span>
+                            </a>
+                        </div>
+                    </div>
+                </div>
+                <div class="bg-surface p-8 border border-outline-variant">
+                    <form class="space-y-4">
+                        <div class="grid md:grid-cols-2 gap-4">
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-on-surface-variant">Nome</label>
+                                <input
+                                    class="w-full border-0 border-b border-outline bg-transparent py-2 px-0 focus:ring-0 focus:border-primary transition-colors"
+                                    placeholder="Seu nome completo" type="text" />
+                            </div>
+                            <div class="space-y-1">
+                                <label class="text-xs font-bold text-on-surface-variant">E-mail</label>
+                                <input
+                                    class="w-full border-0 border-b border-outline bg-transparent py-2 px-0 focus:ring-0 focus:border-primary transition-colors"
+                                    placeholder="seu@email.com" type="email" />
+                            </div>
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold text-on-surface-variant">Cidade/Estado</label>
+                            <input
+                                class="w-full border-0 border-b border-outline bg-transparent py-2 px-0 focus:ring-0 focus:border-primary transition-colors"
+                                placeholder="Onde você está localizado?" type="text" />
+                        </div>
+                        <div class="space-y-1">
+                            <label class="text-xs font-bold text-on-surface-variant">Mensagem</label>
+                            <textarea
+                                class="w-full border-0 border-b border-outline bg-transparent py-2 px-0 focus:ring-0 focus:border-primary transition-colors resize-none"
+                                placeholder="Como posso ajudar?" rows="4"></textarea>
+                        </div>
+                        <button
+                            class="w-full bg-primary-container text-white py-4 font-bold uppercase tracking-widest text-sm mt-4 hover:bg-red-800 transition-colors">
+                            Enviar Solicitação
+                        </button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Footer -->
+    <footer class="bg-slate-50 dark:bg-slate-950 border-t border-slate-200 dark:border-slate-800">
+        <div class="flex flex-col md:flex-row justify-between items-center py-12 px-6 max-w-[1200px] mx-auto gap-4">
+            <div class="text-center md:text-left">
+                <span class="text-lg font-bold text-slate-900 dark:text-white block mb-2">Bombeiro Profissional</span>
+                <p class="font-['Work_Sans'] text-xs text-slate-500 dark:text-slate-400">© 2024 Bombeiro Profissional.
+                    Todos os direitos reservados. Prontidão e Segurança.</p>
+            </div>
+            <div class="flex gap-6">
+                <a class="text-slate-500 dark:text-slate-400 hover:text-red-700 dark:hover:text-red-500 transition-opacity opacity-80 hover:opacity-100 text-xs font-['Work_Sans']"
+                    href="#">Privacidade</a>
+                <a class="text-slate-500 dark:text-slate-400 hover:text-red-700 dark:hover:text-red-500 transition-opacity opacity-80 hover:opacity-100 text-xs font-['Work_Sans']"
+                    href="#">Termos de Uso</a>
+                <a class="text-slate-500 dark:text-slate-400 hover:text-red-700 dark:hover:text-red-500 transition-opacity opacity-80 hover:opacity-100 text-xs font-['Work_Sans']"
+                    href="#">Conduta Ética</a>
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>
